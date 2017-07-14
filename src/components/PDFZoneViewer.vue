@@ -60,9 +60,9 @@ export default {
         let y1 = parseInt(this.dimensions.height - s.coordinates.top - s.coordinates.height)
         let bbox = [
           s.coordinates.left,
-          Math.min(y0, y1),
+          Math.max(y0, y1),
           s.coordinates.left + s.coordinates.width,
-          Math.max(y0, y1)
+          Math.min(y0, y1)
         ].join(',')
         let query = `LTPage[pageid=\\'${s.coordinates.page}\\'] LTTextLineHorizontal:overlaps_bbox("${bbox}")`
         return `\t('${s.name}', '${query}')`

@@ -4,6 +4,7 @@
       Currently working on: <span class="filename">{{ name }}</span>
       <span class="filetype">{{ arrayBuffer ? "PDF" : "image" }}</span>
     </h3>
+    <p>If you want to zoom in/out, you'll need to use your browser zoom for the moment.</p>
     <div class='selection-area' @mousedown="start" @mouseup="end" @mousemove="drag" v-if="src || arrayBuffer" ref="selectionArea">
       <img :src="src" v-if="src">
       <PDF :setPdfSize="setPdfSize" :arrayBuffer="arrayBuffer" v-if="arrayBuffer"></PDF>
